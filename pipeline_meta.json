@@ -1,0 +1,80 @@
+{
+  "threshold": 0.4174197026320269,
+  "numerical_features": [
+    "time_in_hospital",
+    "num_lab_procedures",
+    "num_procedures",
+    "num_medications",
+    "number_outpatient",
+    "number_emergency",
+    "number_inpatient",
+    "number_diagnoses"
+  ],
+  "categorical_features": [
+    "race",
+    "gender",
+    "age",
+    "payer_code",
+    "medical_specialty",
+    "diag_1",
+    "diag_2",
+    "diag_3",
+    "max_glu_serum",
+    "A1Cresult",
+    "metformin",
+    "repaglinide",
+    "nateglinide",
+    "chlorpropamide",
+    "glimepiride",
+    "glipizide",
+    "glyburide",
+    "tolbutamide",
+    "pioglitazone",
+    "rosiglitazone",
+    "acarbose",
+    "miglitol",
+    "troglitazone",
+    "tolazamide",
+    "insulin",
+    "glyburide-metformin",
+    "glipizide-metformin",
+    "glimepiride-pioglitazone",
+    "change",
+    "diabetesMed"
+  ],
+  "cv_metrics": {
+    "accuracy": {
+      "mean": 0.6157,
+      "std": 0.0056022316981717045
+    },
+    "precision": {
+      "mean": 0.5984222083181827,
+      "std": 0.009378483716311153
+    },
+    "recall": {
+      "mean": 0.4810462572581734,
+      "std": 0.006552843092508117
+    },
+    "f1": {
+      "mean": 0.5332765053053276,
+      "std": 0.004489634357625071
+    },
+    "roc_auc": {
+      "mean": 0.652041115223333,
+      "std": 0.006647626593782573
+    },
+    "auprc": {
+      "mean": 0.5979387164035954,
+      "std": 0.007435514680376902
+    }
+  },
+  "final_metrics": {
+    "accuracy": 0.5416,
+    "precision": 0.4988,
+    "recall": 0.8883,
+    "f1": 0.6388,
+    "roc_auc": 0.6551,
+    "auprc": 0.6152,
+    "threshold": 0.4174
+  }
+}
