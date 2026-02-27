@@ -3,84 +3,376 @@
         {
             "name": "time_in_hospital",
             "type": "int",
-            "example": 14
+            "example": 14,
+            "default": 3
         },
         {
             "name": "num_lab_procedures",
             "type": "int",
-            "example": 41
+            "example": 41,
+            "default": 40
         },
         {
             "name": "num_procedures",
             "type": "int",
-            "example": 0
+            "example": 0,
+            "default": 0
         },
         {
             "name": "num_medications",
             "type": "int",
-            "example": 11
+            "example": 11,
+            "default": 10
         },
         {
             "name": "number_outpatient",
             "type": "int",
-            "example": 0
+            "example": 0,
+            "default": 0
         },
         {
             "name": "number_emergency",
             "type": "int",
-            "example": 0
+            "example": 0,
+            "default": 0
         },
         {
             "name": "number_inpatient",
             "type": "int",
-            "example": 0
+            "example": 0,
+            "default": 0
         },
         {
             "name": "number_diagnoses",
             "type": "int",
-            "example": 6
+            "example": 6,
+            "default": 5
         },
         {
             "name": "race",
             "type": "string",
+            "example": "Caucasian",
+            "default": "Other",
             "enum": [
                 "Caucasian",
                 "AfricanAmerican",
                 "Other"
-            ],
-            "example": "Caucasian"
+            ]
         },
         {
             "name": "gender",
             "type": "string",
+            "example": "Female",
+            "default": "Female",
             "enum": [
                 "Female",
                 "Male"
-            ],
-            "example": "Female"
+            ]
         },
         {
             "name": "age",
             "type": "string",
+            "example": "[70-80)",
+            "default": "[50-60)",
             "enum": [
-                "[70-80)",
-                "[60-70)",
+                "[40-50)",
                 "[50-60)",
-                "[80-90)",
-                "[40-50)"
-            ],
-            "example": "[70-80)"
+                "[60-70)",
+                "[70-80)",
+                "[80-90)"
+            ]
+        },
+        {
+            "name": "payer_code",
+            "type": "string",
+            "example": "Other",
+            "default": "Other"
+        },
+        {
+            "name": "medical_specialty",
+            "type": "string",
+            "example": "InternalMedicine",
+            "default": "Other"
+        },
+        {
+            "name": "diag_1",
+            "type": "string",
+            "example": "Other",
+            "default": "Other"
+        },
+        {
+            "name": "diag_2",
+            "type": "string",
+            "example": "Other",
+            "default": "Other"
+        },
+        {
+            "name": "diag_3",
+            "type": "string",
+            "example": "Other",
+            "default": "Other"
+        },
+        {
+            "name": "max_glu_serum",
+            "type": "string",
+            "example": "None",
+            "default": "None",
+            "enum": [
+                "None",
+                ">200",
+                ">300",
+                "Norm"
+            ]
+        },
+        {
+            "name": "A1Cresult",
+            "type": "string",
+            "example": "None",
+            "default": "None",
+            "enum": [
+                "None",
+                ">7",
+                ">8",
+                "Norm"
+            ]
+        },
+        {
+            "name": "metformin",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "repaglinide",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "nateglinide",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "chlorpropamide",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "glimepiride",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "glipizide",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "glyburide",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "tolbutamide",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "pioglitazone",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "rosiglitazone",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "acarbose",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "miglitol",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "troglitazone",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "tolazamide",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "insulin",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "glyburide-metformin",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "glipizide-metformin",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "glimepiride-pioglitazone",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Steady",
+                "Up",
+                "Down"
+            ]
+        },
+        {
+            "name": "change",
+            "type": "string",
+            "example": "No",
+            "default": "No",
+            "enum": [
+                "No",
+                "Ch"
+            ]
         },
         {
             "name": "diabetesMed",
             "type": "string",
+            "example": "Yes",
+            "default": "Yes",
             "enum": [
                 "Yes",
                 "No"
-            ],
-            "example": "Yes"
+            ]
         }
     ],
-    "note": "The model uses one-hot encoding internally. Input strings like 'race' will be mapped to 'race_Caucasian', etc.",
+    "note": "All 38 features are listed in pipeline order. Missing fields are filled with their defaults. The model uses one-hot encoding internally.",
     "output": "readmitted (bool: 1 if yes, 0 if no)"
 }
