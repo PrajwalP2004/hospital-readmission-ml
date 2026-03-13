@@ -1,0 +1,85 @@
+# ── Python ──────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.flakes/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ── Environment / Secrets ───────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.flaskenv
+.venv
+venv
+ENV
+env
+
+# ── ML Artifacts (Required for functional API deployment) ─────────
+# ml/artifacts/*.joblib (Keep these tracked to ensure the API is ready-to-use)
+# !ml/artifacts/*.joblib
+
+# ── Data (Exclude raw datasets from version control) ─────────────
+data/
+*.csv
+*.parquet
+*.jsonl
+
+# ── Logs / Temporary ────────────────────────────────────────────
+*.log
+logs/
+tmp/
+temp/
+
+# ── Node / Frontend ─────────────────────────────────────────────
+node_modules/
+jspm_packages/
+.npm/
+.eslintcache
+.stylelintcache
+.parcel-cache
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+dist/
+dist-ssr/
+*.local
+
+# ── Editor / IDE ────────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# ── Deployment ──────────────────────────────────────────────────
+.heroku/
+.profile.d/
