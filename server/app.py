@@ -56,9 +56,20 @@ load_dotenv()
 # ── Flask app ─────────────────────────────────────────────────────────────────
 app = Flask(__name__, static_folder=None)
 
-# CORS — restrict origins in production
-cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
-CORS(app, origins=cors_origins, supports_credentials=True)
+# CORS — restrict origins in production; also allow any *.onrender.com subdomain
+cors_origins_raw = os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
+cors_origins = [o.strip() for o in cors_origins_raw]
+# Allow any Render preview URLs
+import re as _re
+def _cors_origin_check(origin):
+    if not origin:
+        return False
+    if origin in cors_origins:
+        return True
+    if _re.match(r'https://[a-zA-Z0-9-]+\.onrender\.com$', origin):
+        return True
+    return False
+CORS(app, origins=_cors_origin_check, supports_credentials=True)
 
 # Rate limiting
 limiter = Limiter(
