@@ -143,9 +143,45 @@ gunicorn server.app:app --bind 0.0.0.0:$PORT --workers 2
 ---
 
 ## 📊 Dataset & Metrics
+
 - **Dataset**: [UCI Diabetes 130-US Hospitals (1999-2008)](https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008)
-- **Primary Metric**: Recall (Sensitivity) - Crucial for medical readmission detection.
-- **Algorithm**: Random Forest Classifier with balanced class weights.
+- **Samples**: 25,000 diabetic patient encounters
+- **Primary Metric**: Recall (Sensitivity) — crucial for medical detection (minimise missed readmissions)
+- **Algorithm**: Random Forest Classifier with balanced class weights & optimised decision threshold
+
+### Performance Summary (Full Dataset, threshold = 0.4174)
+
+| Metric | Value |
+|---|---|
+| **ROC AUC** | **0.7219** |
+| **Recall (Sensitivity)** | **0.9150** |
+| Precision | 0.5220 |
+| F1-Score | 0.6638 |
+| Accuracy | 0.5740 |
+| 5-Fold CV AUC | 0.6520 ± 0.0066 |
+
+> **Design choice**: The threshold is tuned low (0.4174) to maximise recall — in a clinical context, a false negative (missed readmission) is far more costly than a false positive.
+
+---
+
+### 🔲 Confusion Matrix
+
+![Confusion Matrix](docs/images/confusion_matrix.png)
+
+| | Predicted: Not Readmitted | Predicted: Readmitted |
+|---|---|---|
+| **Actual: Not Readmitted** | 4,031 ✅ (TN) | 9,559 ❌ (FP) |
+| **Actual: Readmitted** | 968 ❌ (FN) | 10,442 ✅ (TP) |
+
+---
+
+### 📈 ROC Curve
+
+![ROC Curve](docs/images/roc_curve.png)
+
+The ROC curve shows an **AUC of 0.7219**, significantly above the 0.5 random-classifier baseline. The green operating point marks the chosen threshold (0.4174), yielding a **True Positive Rate of 91.5%** — meaning the model correctly flags over 9 in 10 actual readmissions.
+
+> To regenerate these plots: `python scripts/generate_plots.py`
 
 ---
 
